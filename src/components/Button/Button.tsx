@@ -1,25 +1,25 @@
-import React from "react";
-import { variants, sizes, disabled } from "./Button.css";
+import { type ButtonHTMLAttributes, type ReactNode } from "react";
+import * as styles from "./Button.css";
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "danger";
   size?: "small" | "medium" | "large";
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-export const Button: React.FC<ButtonProps> = ({
+export function Button({
   variant = "primary",
   size = "medium",
   disabled: isDisabled = false,
   className,
   children,
   ...props
-}) => {
+}: ButtonProps) {
   const buttonClass = [
-    variants[variant],
-    sizes[size],
-    isDisabled && disabled,
+    styles.variants[variant],
+    styles.sizes[size],
+    isDisabled && styles.disabled,
     className,
   ]
     .filter(Boolean)
@@ -30,6 +30,6 @@ export const Button: React.FC<ButtonProps> = ({
       {children}
     </button>
   );
-};
+}
 
 export default Button;

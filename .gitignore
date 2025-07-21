@@ -36,3 +36,5 @@ coverage/
 *.tsbuildinfo
 *storybook.log
 storybook-static
+
+.npmrc

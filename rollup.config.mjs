@@ -4,38 +4,39 @@ import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
 import { vanillaExtractPlugin } from "@vanilla-extract/rollup-plugin";
-import { readFileSync } from "fs";
-
-const packageJson = JSON.parse(readFileSync("./package.json", "utf8"));
 
 export default [
   {
     input: "src/index.ts",
     output: [
       {
-        file: packageJson.main,
+        file: "dist/cjs/index.js",
         format: "cjs",
         sourcemap: true,
-        preserveModules: false,
       },
       {
-        file: packageJson.module,
+        file: "dist/esm/index.js",
         format: "esm",
         sourcemap: true,
-        preserveModules: false,
       },
     ],
     plugins: [
       resolve(),
       commonjs(),
-      vanillaExtractPlugin(),
+      vanillaExtractPlugin({
+        identifiers: 'short'
+      }),
       typescript({
         tsconfig: "./tsconfig.json",
         exclude: ["**/*.test.tsx", "**/*.test.ts", "**/*.stories.ts", "**/*.stories.tsx"],
       }),
-      postcss({ extensions: [".css"], inject: true, extract: false }),
+      postcss({ 
+        extensions: [".css"], 
+        inject: true,
+        modules: false,
+      }),
     ],
-    external: ["react", "react-dom"],
+    external: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime"],
   },
   {
     input: "src/index.ts",
