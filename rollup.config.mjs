@@ -24,19 +24,29 @@ export default [
       resolve(),
       commonjs(),
       vanillaExtractPlugin({
-        identifiers: 'short'
+        identifiers: "short",
       }),
       typescript({
         tsconfig: "./tsconfig.json",
-        exclude: ["**/*.test.tsx", "**/*.test.ts", "**/*.stories.ts", "**/*.stories.tsx"],
+        exclude: [
+          "**/*.test.tsx",
+          "**/*.test.ts",
+          "**/*.stories.ts",
+          "**/*.stories.tsx",
+        ],
       }),
-      postcss({ 
-        extensions: [".css"], 
+      postcss({
+        extensions: [".css"],
         inject: true,
         modules: false,
       }),
     ],
-    external: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime"],
+    external: [
+      "react",
+      "react-dom",
+      "react/jsx-runtime",
+      "react/jsx-dev-runtime",
+    ],
   },
   {
     input: "src/index.ts",
