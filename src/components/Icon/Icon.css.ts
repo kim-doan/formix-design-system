@@ -20,6 +20,10 @@ globalStyle(`${iconBase} svg`, {
 });
 
 export const sizes = styleVariants({
+  xsmall: {
+    width: "12px",
+    height: "12px",
+  },
   small: {
     width: "16px",
     height: "16px",
