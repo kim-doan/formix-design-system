@@ -4,3 +4,6 @@ export * from "./TextButton";
 export * from "./Icon";
 export * from "./Spinner";
 export * from "./Chip";
+export * from "./NumberInput";
+export * from "./TextInput";
+export * from "./TextArea";
