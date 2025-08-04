@@ -7,3 +7,5 @@ export * from "./Chip";
 export * from "./NumberInput";
 export * from "./TextInput";
 export * from "./TextArea";
+export * from "./Select";
+export * from "./CheckBox";
