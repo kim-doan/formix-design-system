@@ -21,9 +21,6 @@ const meta = {
     disabled: {
       control: "boolean",
     },
-    tight: {
-      control: "boolean",
-    },
     bold: {
       control: "boolean",
     },
@@ -121,13 +118,6 @@ export const DisabledChecked: Story = {
   },
 };
 
-export const Tight: Story = {
-  args: {
-    tight: true,
-    label: "타이트 레이아웃",
-  },
-};
-
 export const Bold: Story = {
   args: {
     bold: true,
@@ -158,11 +148,11 @@ export const Interactive: Story = {
     });
 
     const handleCheckbox1 = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setStates(prev => ({ ...prev, checkbox1: e.target.checked }));
+      setStates((prev) => ({ ...prev, checkbox1: e.target.checked }));
     };
 
     const handleCheckbox2 = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setStates(prev => ({ ...prev, checkbox2: e.target.checked }));
+      setStates((prev) => ({ ...prev, checkbox2: e.target.checked }));
     };
 
     const handleParentCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -188,7 +178,14 @@ export const Interactive: Story = {
           state={getParentState()}
           onChange={handleParentCheckbox}
         />
-        <div style={{ marginLeft: "24px", display: "flex", flexDirection: "column", gap: "8px" }}>
+        <div
+          style={{
+            marginLeft: "24px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "8px",
+          }}
+        >
           <CheckBox
             label="옵션 1"
             checked={states.checkbox1}

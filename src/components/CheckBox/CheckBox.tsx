@@ -8,7 +8,6 @@ export interface CheckBoxProps extends InputHTMLAttributes<HTMLInputElement> {
   $size?: "small" | "medium";
   state?: "unchecked" | "checked" | "indeterminate";
   label?: string;
-  tight?: boolean;
   bold?: boolean;
   typography?: {
     fontFamily?: string;
@@ -24,7 +23,6 @@ export default function CheckBox({
   $size = "medium",
   state = "unchecked",
   label,
-  tight = false,
   bold = false,
   disabled: isDisabled = false,
   className,
@@ -43,6 +41,7 @@ export default function CheckBox({
   const labelStyle = {
     ...typography,
     ...(typographyColor && { color: typographyColor }),
+    fontWeight: bold ? "600" : "400",
   };
 
   useEffect(() => {
