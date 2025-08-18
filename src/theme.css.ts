@@ -290,7 +290,7 @@ export const vars = createGlobalTheme(":root", {
       fill: {
         normal: Color(palette.coolNeutral[50]).alpha(0.08).toString(),
         strong: Color(palette.coolNeutral[50]).alpha(0.16).toString(),
-        heavy: Color(palette.coolNeutral[50]).alpha(0.05).toString(),
+        alterNative: Color(palette.coolNeutral[50]).alpha(0.05).toString(),
       },
       meterial: {
         dimmer: Color(palette.coolNeutral[10]).alpha(0.52).toString(),

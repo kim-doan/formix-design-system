@@ -16,6 +16,7 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export default function TextInput({
+  width,
   status = "normal",
   value,
   headingLabel,
@@ -56,7 +57,7 @@ export default function TextInput({
   );
 
   return (
-    <div className={wrapperClass}>
+    <div className={wrapperClass} style={{ width }}>
       <label className={styles.headingLabel}>
         {headingLabel}
         {requiredBadge && <span className="required-badge">*</span>}

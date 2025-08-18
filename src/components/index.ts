@@ -9,3 +9,5 @@ export * from "./TextInput";
 export * from "./TextArea";
 export * from "./Select";
 export * from "./CheckBox";
+export * from "./CheckBoxGroup";
+export * from "./Table";

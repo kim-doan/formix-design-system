@@ -63,6 +63,26 @@ export const checkboxCheck = keyframes({
   },
 });
 
+export const checkboxCheckSmall = keyframes({
+  "0%": {
+    width: 0,
+    height: 0,
+    borderColor: vars.color.palette.common[100],
+    transform: "translate3d(0,0,0) rotate(45deg)",
+  },
+  "33%": {
+    width: ".35em",
+    height: "0",
+    transform: "translate3de(0,0,0) rotate(45deg)",
+  },
+  "100%": {
+    width: ".35em",
+    height: ".5em",
+    borderColor: vars.color.palette.common[100],
+    transform: "translate3d(0, -.35em, 0) rotate(45deg)",
+  },
+});
+
 export const label = styleVariants({
   small: {
     ...vars.typography.label1Normal,
@@ -115,7 +135,7 @@ globalStyle(`${input}:checked + label > span`, {
   animation: `${shrinkBounce} 200ms cubic-bezier(0.4, 0, 0.23, 1)`,
 });
 
-globalStyle(`${input}:checked + label > span:before`, {
+globalStyle(`${inputWrapper.medium} ${input}:checked + label > span:before`, {
   content: "",
   position: "absolute",
   borderRight: "2px solid transparent",
@@ -125,6 +145,18 @@ globalStyle(`${input}:checked + label > span:before`, {
   transform: "rotate(45deg)",
   transformOrigin: "0% 100%",
   animation: `${checkboxCheck} 125ms 250ms cubic-bezier(0.4, 0, 0.23, 1) forwards`,
+});
+
+globalStyle(`${inputWrapper.small} ${input}:checked + label > span:before`, {
+  content: "",
+  position: "absolute",
+  borderRight: "2px solid transparent",
+  borderBottom: "2px solid transparent",
+  top: "calc(50% -6px)",
+  left: "calc(50% - 6px)",
+  transform: "rotate(45deg)",
+  transformOrigin: "0% 100%",
+  animation: `${checkboxCheckSmall} 125ms 250ms cubic-bezier(0.4, 0, 0.23, 1) forwards`,
 });
 
 globalStyle(`${input}:indeterminate + label > span`, {
