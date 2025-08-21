@@ -216,6 +216,9 @@ const palette = {
 };
 
 export const vars = createGlobalTheme(":root", {
+  elevation: {
+    overlay: "9000",
+  },
   color: {
     semantic: {
       static: {

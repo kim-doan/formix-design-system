@@ -11,7 +11,7 @@ export interface IconProps extends HTMLAttributes<HTMLSpanElement> {
 export default function Icon({
   name,
   size = "medium",
-  color = "currentColor",
+  color,
   className,
   style,
   ...props
