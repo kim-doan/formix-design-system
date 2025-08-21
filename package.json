@@ -1,6 +1,6 @@
 {
   "name": "@wdyj-lab/formix-design-system",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Formix Design System Library",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -18,12 +18,7 @@
   "files": [
     "dist"
   ],
-  "sideEffects": [
-    "**/*.css.js",
-    "**/*.css",
-    "src/global.css.ts",
-    "src/fonts.css.ts"
-  ],
+  "sideEffects": false,
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
