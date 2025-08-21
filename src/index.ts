@@ -1,2 +1,6 @@
 export * from "./components";
-export { vars, type Vars } from "./theme.css";
+import { vars as themeVars } from "./theme.css";
+import type { ThemeVars } from "./theme.types";
+
+export const vars = themeVars as ThemeVars;
+export type { ThemeVars };

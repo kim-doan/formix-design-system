@@ -1,6 +1,7 @@
 import { createGlobalTheme } from "@vanilla-extract/css";
 import { pretendard } from "./fonts.css";
 import Color from "color";
+import type { ThemeVars } from "./theme.types";
 
 const palette = {
   common: {
@@ -426,7 +427,6 @@ export const vars = createGlobalTheme(":root", {
       letterSpacing: "0.0311em",
     },
   },
-});
+}) as ThemeVars;
 
-// 타입 export를 위한 타입 정의
-export type Vars = typeof vars;
+export type Vars = ThemeVars;
