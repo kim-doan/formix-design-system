@@ -1,3 +1,2 @@
 export * from "./components";
-export { vars } from "./theme.css";
-export type { ThemeVars } from "./types/theme";
+export { vars, type Vars } from "./theme.css";

@@ -427,3 +427,6 @@ export const vars = createGlobalTheme(":root", {
     },
   },
 });
+
+// 타입 export를 위한 타입 정의
+export type Vars = typeof vars;
