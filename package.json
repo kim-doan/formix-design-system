@@ -1,6 +1,6 @@
 {
   "name": "@wdyj-lab/formix-design-system",
-  "version": "0.5.8",
+  "version": "0.5.9",
   "description": "Formix Design System Library",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -9,10 +9,15 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "import": "./dist/index.js"
     },
-    "./styles": "./dist/style.css",
+    "./theme": {
+      "import": "./dist/theme.js"
+    },
+    "./fonts": {
+      "import": "./dist/fonts.js"
+    },
+    "./styles": "./dist/*.css",
     "./*.css": "./dist/*.css"
   },
   "files": [
