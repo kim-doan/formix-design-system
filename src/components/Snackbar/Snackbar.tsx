@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import { Icon, IconName } from "../Icon";
 import { TextButton } from "../TextButton";
 import * as styles from "./Snackbar.css";
@@ -9,6 +9,7 @@ export interface SnackbarProps
   description?: string;
   icon?: IconName;
   actionLabel?: string;
+  children?: ReactNode;
   onActionClick?: () => void;
 }
 

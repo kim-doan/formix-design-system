@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { usePopup } from "../hooks";
 import { Icon } from "../../Icon";
@@ -8,7 +8,7 @@ export interface PopupProps
   extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   isOpen: boolean;
   onClose?: () => void;
-  children: ReactNode;
+  children?: ReactNode;
   closeOnBackdropClick?: boolean;
   closeOnEscape?: boolean;
   showCloseButton?: boolean;
@@ -25,6 +25,12 @@ export default function Popup({
   style,
   ...props
 }: PopupProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   usePopup({ isOpen, onClose, closeOnEscape });
 
   const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -39,7 +45,7 @@ export default function Popup({
 
   const contentClass = [styles.content, className].filter(Boolean).join(" ");
 
-  if (!isOpen) {
+  if (!isOpen || !isMounted) {
     return null;
   }
 

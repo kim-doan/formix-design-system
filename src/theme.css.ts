@@ -218,6 +218,8 @@ const palette = {
 
 export const vars = createGlobalTheme(":root", {
   elevation: {
+    LNB: "2000",
+    snackbar: "2000",
     overlay: "9000",
   },
   color: {
