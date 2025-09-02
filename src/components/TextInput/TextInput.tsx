@@ -1,5 +1,5 @@
 import { InputHTMLAttributes, useState } from "react";
-import { IconName } from "../Icon";
+import { Icon, IconName } from "../Icon";
 import * as styles from "./TextInput.css";
 import { useTextInputIcon } from "./hooks/useTextInputIcon";
 
@@ -9,6 +9,8 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   headingLabel?: string;
   requiredBadge?: boolean;
   description?: string;
+  leadingIcon?: IconName;
+  leadingIconColor?: string;
   icon?: IconName;
   iconColor?: string;
   showDelete?: boolean;
@@ -23,6 +25,8 @@ export default function TextInput({
   requiredBadge = false,
   placeholder = "텍스트를 입력해 주세요.",
   description,
+  leadingIcon,
+  leadingIconColor,
   icon,
   iconColor,
   className,
@@ -58,6 +62,9 @@ export default function TextInput({
 
   return (
     <div className={wrapperClass} style={{ width }}>
+      {leadingIcon && (
+        <Icon name={leadingIcon} color={leadingIconColor} size={22} />
+      )}
       <label className={styles.headingLabel}>
         {headingLabel}
         {requiredBadge && <span className="required-badge">*</span>}
