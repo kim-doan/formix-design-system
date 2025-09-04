@@ -1,4 +1,4 @@
-import { globalStyle, style } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 import { vars } from "../../theme.css";
 
 export const wrapper = style({
@@ -8,6 +8,7 @@ export const wrapper = style({
   overflow: "hidden",
   display: "flex",
   flexDirection: "column",
+  background: vars.color.semantic.background.normal,
 });
 
 export const wrapperWithHorizontalScroll = style({
@@ -34,8 +35,4 @@ export const table = style({
 export const tbody = style({
   maxHeight: "400px",
   overflowY: "auto",
-});
-
-globalStyle(`${table} tbody tr:last-child`, {
-  borderBottom: "none",
 });

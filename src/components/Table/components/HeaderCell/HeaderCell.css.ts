@@ -6,8 +6,9 @@ export const headerCell = style({
   textAlign: "left",
   color: vars.color.semantic.label.neutral,
   fontWeight: 600,
-  padding: "6px 0px 6px 12px",
+  padding: "0px 0px 0px 16px",
   position: "relative",
+  height: "40px",
 });
 
 export const cellBorder = style({
