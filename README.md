@@ -1,3 +1,6 @@
+# StoryBook
+https://kim-doan.github.io/formix-design-system
+
 # Formix Design System
 
 A modern React component library built with TypeScript and vanilla-extract.
